@@ -1,0 +1,16 @@
+# Plugin Information File
+
+name: Tutor
+main: me.zeusreksyou_.tutorial
+author: zeusreksyou_
+version: 1.0.0
+
+commands:
+       hey:
+         usage: /<command>
+         description: get a cool message
+         
+permissions:
+       tutorial.hey:
+         description: permission to get a message
+         default: op
