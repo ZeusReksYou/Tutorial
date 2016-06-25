@@ -1,0 +1,29 @@
+package me.zeusreksyou.tutorial;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class Tutor extends JavaPlugin {
+
+	public void onEnable() {
+		Bukkit.getLogger().info("Hey! Tutor is enabled!");
+	}
+
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		if (cmd.getName().equalsIgnoreCase("hey")) {
+			if (!(sender.hasPermission("tutorial.hey"))) {
+				sender.sendMessage(ChatColor.RED + "No permission!");
+				return true;
+			}
+			sender.sendMessage(ChatColor.GREEN 
+					+ this.getConfig().getString("Hello Message"));
+			return true;
+		}
+		return true;
+	}
+
+}
+
